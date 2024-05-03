@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React from 'react'
 import './App.css';
+import Navbar from './components/Navbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Bot from './Pages/Bot';
+import BotDetails from './Pages/BotDetails';
+import BotAmy from './components/BotAmy';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <BrowserRouter>
+     <Navbar/>
+     <Routes>
+      <Route path='/' element={<Bot/>} />
+      <Route path='/botDetails/:id' element={<BotDetails/>} />
+      <Route path='/botArmy' element={<BotAmy/>} />
+     </Routes>
+     </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

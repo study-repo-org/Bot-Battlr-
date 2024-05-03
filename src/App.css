@@ -1,38 +1,280 @@
-.App {
-  text-align: center;
+.navbar{
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar .navbar-link{
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.navbar a{
+  padding: 0 20px;
+  text-decoration: none;
+  color: black;
+
+}
+
+.navbar a:hover{
+  border-bottom: 1px yellowgreen solid;
+}
+
+
+.amy-container{
+  background-color: #b5cc18;
+  width: 100%;
+}
+
+.amy-container{
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.column-grid{
+  display: grid;
+  grid-gap: 10px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+}
+
+.column-grid a{
+  text-decoration: none;
+  color: black;
+}
+
+.bot-army{
+  border: 1px rgba(128, 128, 128, 0.374) solid;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background-color:rgba(0, 0, 0, .05); ;
+  height: 250px;
+  width: 100%;
+}
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.item-container {
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 5px;
+  border-bottom: 1px rgba(128, 128, 128, 0.427) solid;
+}
+
+.item-container small {
+  font-weight: lighter;
+  width: 200px; 
+  word-wrap: break-word;
+}
+
+
+.extra-info{
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.extra-info span{
+  font-weight: lighter;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.extra-info button {
+ background-color: rgb(213, 2, 2);
+ border: none;
+ padding: 7px 20px;
+ border-radius: 5px;
+ color: white;
+}
+
+@media (max-width: 768px) {
+  .column-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 480px) {
+  .column-grid {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}
+
+
+.byid-container{
+
+  padding: 10px 0;
+  background-color: white;
+}
+
+.byid-div{
+  border: 1px rgba(128, 128, 128, 0.316) solid;
+  padding: 10px 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 20px;
+}
+
+.byid-div .image{
+  border-radius: 50%;
+  border: 1px rgba(128, 128, 128, 0.304) solid;
+}
+
+.byid-div .header{
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.byid-text{
+ flex-direction:column-reverse;
+}
+
+.byid-category{
+  border: 1px rgba(128, 128, 128, 0.453) solid;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.category .p{
+  margin-left: 10px;
+}
+
+.byid-button{
+  flex-direction: column;
+}
+
+
+.byid-button .button-back{
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px 30px;
+  border: none;
+ background-color: rgba(0, 0, 255, 0.648);
+ color: white;
+ cursor: pointer;
+}
+
+.byid-button .button-back a{
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.byid-button .button-enlist{
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px 30px;
+  border: none;
+ background-color: greenyellow;
+ cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.byid-button .button-delete{
+  border-radius: 5px;
+  margin: 20px;
+  padding: 10px 30px;
+  border: none;
+ background-color: red;
+ color: white;
+ cursor: pointer;
+}
+
+.heart{
+  border: 1px gray solid;
+  border-radius: 50%;
+  padding: 5px 5px 0 5px;
+  color: red;
+}
+
+.lightning{
+  border: 1px gray solid;
+  border-radius: 50%;
+  padding: 5px 5px 0 5px;
+  color: yellow;
+}
+
+.shield{
+  border: 1px gray solid;
+  border-radius: 50%;
+  padding: 5px 5px 0 5px;
+  color: rgba(0, 0, 255, 0.601);
+}
+
+@media (max-width: 760px) {
+  .byid-div {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+
+select {
+  margin: 20px 20px ;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 200px;
+  appearance: none;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  cursor: pointer;
+}
+
+
+select option {
+  padding: 8px;
+  font-size: 16px;
+}
+
+
+select option:checked {
+  background-color: #f0f0f0;
+}
+
+select:focus {
+  outline: none;
+  border: none;
+  border-color: #007bff;
+  box-shadow: 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+.button-container{
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.button-container button{
+cursor: pointer;
+padding: 6px 20px ;
+border: none;
+border-radius: 5px;
+background-color: rgba(128, 128, 128, 0.368);
+}
+
+.container{
+  margin: 20px;
 }
