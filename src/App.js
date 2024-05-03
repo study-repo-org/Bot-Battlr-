@@ -9,14 +9,10 @@ import BotAmy from './components/BotAmy';
 function App() {
   return (
     <div>
-     <BrowserRouter>
      <Navbar/>
-     <Routes>
       <Route path='/' element={<Bot/>} />
       <Route path='/botDetails/:id' element={<BotDetails/>} />
       <Route path='/botArmy' element={<BotAmy/>} />
-     </Routes>
-     </BrowserRouter>
     </div>
   )
 }
