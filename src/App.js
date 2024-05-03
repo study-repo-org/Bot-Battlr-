@@ -10,9 +10,11 @@ function App() {
   return (
     <div>
      <Navbar/>
+     <Routes>
       <Route path='/' element={<Bot/>} />
       <Route path='/botDetails/:id' element={<BotDetails/>} />
       <Route path='/botArmy' element={<BotAmy/>} />
+     </Routes>
     </div>
   )
 }
