@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import Navbar from './components/Navbar';
-import { BrowserRouter, Route, Routes, Outlet  } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Bot from './Pages/Bot';
 import BotDetails from './Pages/BotDetails';
 import BotAmy from './components/BotAmy';
@@ -9,10 +9,14 @@ import BotAmy from './components/BotAmy';
 function App() {
   return (
     <div>
- 
+     <BrowserRouter>
      <Navbar/>
-     <Outlet/>
-   
+     <Routes>
+      <Route path='/' element={<Bot/>} />
+      <Route path='/botDetails/:id' element={<BotDetails/>} />
+      <Route path='/botArmy' element={<BotAmy/>} />
+     </Routes>
+     </BrowserRouter>
     </div>
   )
 }
