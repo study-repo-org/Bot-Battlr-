@@ -20,13 +20,13 @@ npm
 
 ### Installation instruction
 ```
-Git clone https://github.com/study-repo-org/bank-of-flatiron
+Git clone https://github.com/study-repo-org/Bot-Battlr-
 install json-server
 
 ```
 
 # Live Link
-https://study-repo-org.github.io/propertyHub/
+https://study-repo-org.github.io/Bot-Battlr-/
 
 ## Technologies used
 react.js
