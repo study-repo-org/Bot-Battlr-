@@ -7,8 +7,8 @@ function Navbar() {
       <p><Link to='/'>BATTLE ARMY</Link></p>
      
      <nav className='navbar-link'>
-       <Link to='/'>Home</Link>
-        <Link to='/botArmy'>Your Bot Army</Link>
+        <Link to='/'>Home</Link>
+        <Link to='/yourBotArmy'>Your Bot Army</Link>
      </nav>
     </div>
   )

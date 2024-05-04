@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
 import { FaHeartPulse ,FaBoltLightning} from "react-icons/fa6";
 import { FaShieldAlt } from "react-icons/fa";
 
-function BotAmy(props) {
+function YourBotArmy() {
   const [botArmy, setBotArmy] = useState([]);
 
 
+// 8. elected bot should render in the YourBotArmy
   const getBotArmy = async () => {
     try {
       const response = await fetch("https://wk2-cc.onrender.com/yourArmy");
@@ -15,7 +15,6 @@ function BotAmy(props) {
       }
       const data = await response.json();
       setBotArmy(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -26,13 +25,33 @@ function BotAmy(props) {
   }, []);
 
 
+
+  // 9. Release a bot from my army by clicking on it.
+  const releaseBot = async (botId) => {
+    try {
+      const deleteArmy = await fetch(`https://wk2-cc.onrender.com/yourArmy/${botId}`, {
+        method: 'DELETE',
+      });
+     
+      if (!deleteArmy.ok) {
+        throw new Error("Failed to delete bot from backend");
+      }
+      setBotArmy((prevBotArmy) => prevBotArmy.filter((bot) => bot.id !== botId));
+      alert('Bot removed from Your Bot Army successfully')
+    } catch (error) {
+      console.error('Error releasing bot:', error);
+    }
+  };
+
+
+
   return (
     <div className='amy-container'>
         <div className='amy-container'>
             <div className="column-grid">
               {botArmy.map((army) => (
-                  <div className="bot-army">
-                      <div className="">
+                  <div key={army.id} className="bot-army">
+                      <div onClick={() => releaseBot(army.id)} className="">
                           <div className="image-container">
                                 <img className='image' alt="" src={army.avatar_url}  />
                             </div>
@@ -54,6 +73,6 @@ function BotAmy(props) {
   )
 }
 
-BotAmy.propTypes = {}
 
-export default BotAmy
+
+export default YourBotArmy

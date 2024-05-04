@@ -8,9 +8,9 @@ function BotCard({bot}) {
   return (
     <div>
         <div className="column-grid">
-          <Link to={`botDetails/${bot.id}`}>
+          <Link to={`bots/${bot.id}`}>
             <div className="bot-army">
-                  <div className="">
+                  <div key={bot.id} className="">
                           <div className="image-container">
                             <img className='image' alt="" src={bot.avatar_url}  />
                           </div>
