@@ -17,6 +17,8 @@ You use git clone to be able to download the documents in the GitHub
 Git
 json-server
 npm
+npm i react-router-dom
+npm i react-icons
 
 ### Installation instruction
 ```
@@ -30,7 +32,6 @@ https://study-repo-org.github.io/Bot-Battlr-/
 
 ## Technologies used
 react.js
-html
 css
 json-server
 
