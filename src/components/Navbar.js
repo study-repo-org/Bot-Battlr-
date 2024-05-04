@@ -9,6 +9,7 @@ function Navbar() {
      <nav className='navbar-link'>
         <Link to='/'>Home</Link>
         <Link to='/yourBotArmy'>Your Bot Army</Link>
+        <Link to='/addBot'>Add Bot</Link>
      </nav>
     </div>
   )
