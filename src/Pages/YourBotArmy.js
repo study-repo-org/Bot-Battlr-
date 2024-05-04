@@ -6,7 +6,7 @@ function YourBotArmy() {
   const [botArmy, setBotArmy] = useState([]);
 
 
-// 8. elected bot should render in the YourBotArmy
+// 9. elected bot should render in the YourBotArmy
   const getBotArmy = async () => {
     try {
       const response = await fetch("https://wk2-cc.onrender.com/yourArmy");
@@ -26,7 +26,7 @@ function YourBotArmy() {
 
 
 
-  // 9. Release a bot from my army by clicking on it.
+  //10. Release a bot from my army by clicking on it.
   const releaseBot = async (botId) => {
     try {
       const deleteArmy = await fetch(`https://wk2-cc.onrender.com/yourArmy/${botId}`, {

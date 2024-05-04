@@ -1,66 +1,51 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-function AddBot() {
-    const [image , setImage] = useState()
-    const [name, setName] = useState()
-    const [catchphrase, setCatchphrase] = useState()
-    const [classBot, setClassBot] = useState()
-    const [heart, setHeart] = useState()
-    const [damage, setDamage] = useState()
-    const [armor, setArmor] = useState()
-    const navigate = useNavigate()
+function AddBot({handlePost}) {
+  const [avatar_url , setAvatar_url] = useState()
+  const [name, setName] = useState()
+  const [catchphrase, setCatchphrase] = useState()
+  const [classBot, setClassBot] = useState()
+  const [health, setHealth] = useState()
+  const [damage, setDamage] = useState()
+  const [armor, setArmor] = useState()
+  const navigate = useNavigate()
 
-    const handlePost = async (e) => {
-        e.preventDefault();        
-
-        try {
+    
+  const handleSubmit = (e) => {
+        e.preventDefault();  
 
         const botData = {
-            image: image,
+            avatar_url: avatar_url,
             name: name,
             catchphrase: catchphrase,
             classBot: classBot,
-            heart:heart,
+            health:health,
             damage: damage,
             armor: armor
-
-          };
-          const response = await fetch("https://wk2-cc.onrender.com/bots", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(botData),
-          });
-          if (!response.ok) {
-            throw new Error('Failed to create Account');
-          }
-          setImage('')
+        };
+        handlePost(botData)
+          setAvatar_url('')
           setName('')
           setCatchphrase('')
           setClassBot('')
-          setHeart('')
+          setHealth('')
           setDamage('')
           setArmor('')
 
          alert('Bot Created Successfully')
          navigate('/')
-
-        } catch (error) {
-          console.error('Error adding transaction:', error);
-        }
-      };
+  };
 
 
   return (
     <div className='form-container'>
         <div className='div-container'>
             <h3>Create Bot</h3>
-            <form onSubmit={handlePost}>
+            <form onSubmit={handleSubmit}>
                <div className='div-input'>
-               <label>Image</label>
-                <input type='text' value={image} onChange={(e) => setImage(e.target.value)} placeholder='Image' required />
+               <label>Avatar_url</label>
+                <input type='text' value={avatar_url} onChange={(e) => setAvatar_url(e.target.value)} placeholder='avatar_url' required />
                </div>
 
                <div className='div-input'>
@@ -79,8 +64,8 @@ function AddBot() {
                </div>
 
                 <div className='div-input'>
-                <label>Heart</label>
-                <input type='number' value={heart} onChange={(e) => setHeart(e.target.value)} placeholder='Heart' required/>
+                <label>Health</label>
+                <input type='number' value={health} onChange={(e) => setHealth(e.target.value)} placeholder='health' required/>
                 </div>
 
                 <div className='div-input'>

@@ -4,14 +4,14 @@ import { FaShieldAlt } from "react-icons/fa";
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
 
-function BotDetails() {
+function BotDetails({getBots}) {
   const [bot, setBot] = useState([]);
   const {id} = useParams()
   const navigate = useNavigate()
   
 
-//4.  displaying a show view for that bot
-  const getBots = async () => {
+//5.  displaying a show view for that bot
+  const getBotById = async () => {
     try {
       const response = await fetch(`https://wk2-cc.onrender.com/bots/${id}`);
       if (!response.ok) {
@@ -25,12 +25,13 @@ function BotDetails() {
   };
 
   useEffect(() => {
-    getBots();
+    getBotById();
   }, []);
 
 
-  //5. Adding  individual bot to the YourBotArmy and enlisting once
-  //6. And when enlist a bot it will be removed from the BotCollection and added to YourBotArmy
+
+  //6. Adding  individual bot to the YourBotArmy and enlisting once
+  //7. And when enlist a bot it will be removed from the BotCollection and added to YourBotArmy
   const enlistBot = async () => {
     try {
       const armyResponse = await fetch("https://wk2-cc.onrender.com/yourArmy");
@@ -78,6 +79,7 @@ function BotDetails() {
         setBot(armyData);
         alert("Bot enlisted successfully!");
         navigate("/")
+        getBots()
       } else {
         alert(`A bot from the class ${bot.bot_class} is already enlisted.`);
       }
@@ -87,7 +89,7 @@ function BotDetails() {
   };
   
 
-  //7. Discharge a bot from their service forever
+  //8. Discharge a bot from their service forever
   const discharge = async (botId) => {
     try {
       const deleteResponse = await fetch(`https://wk2-cc.onrender.com/bots/${botId}`, {
@@ -99,6 +101,7 @@ function BotDetails() {
 
       alert("Bot discharged successfully!");
        navigate("/")
+       getBots()
     } catch (error) {
       console.error('Error discharging bot:', error);
     }

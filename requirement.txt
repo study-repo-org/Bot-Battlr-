@@ -1,0 +1,21 @@
+1. BotCollection - 
+  a. get bots
+  b. implemented sort by health , damage and armor
+  c. filter by Support, Medic ,Assault , Defender, Captain and Witch
+  d. click the card to get by id (BotSpecs)
+
+2. BotSpecs -
+  a. get bot by id
+  b. three button
+   1. go back to home page
+   2. enlist button it enlist a bot to your army bot (youBotArmy) and delete bot from BotCollection 
+   3. delete button removes bot from botCollection
+
+3. youBotArmy -
+  a. get youBotArmy 
+  b. remove youBotArmy when clicking the card
+ 
+
+4. AddBot -
+  a.add bot
+

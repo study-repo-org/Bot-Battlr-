@@ -6,11 +6,12 @@
 }
 
 .navbar .navbar-link{
-  width: 300px;
+  width: 600px;
   display: flex;
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
+  background-color: #b5cc18;
 }
 
 .navbar a{
@@ -324,7 +325,7 @@ background-color: rgba(128, 128, 128, 0.368);
   border-color: rgba(128, 128, 128, 0.876);
 }
 
-button {
+.form-container button {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
@@ -336,6 +337,6 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.form-container button:hover {
   background-color: #0056b3;
 }
