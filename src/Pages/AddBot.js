@@ -33,7 +33,7 @@ function AddBot({handlePost}) {
           setDamage('')
           setArmor('')
 
-         alert('Bot Created Successfully')
+         console.log('Bot Created Successfully')
          navigate('/')
   };
 

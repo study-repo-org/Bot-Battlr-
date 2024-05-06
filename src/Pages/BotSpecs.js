@@ -74,14 +74,14 @@ function BotDetails({getBots}) {
       if (!removeResponse.ok) {
           throw new Error("Failed to remove bot from BotCollection");
       } else {
-          alert('Bot removed from BotCollection successfully');
+          console.log('Bot removed from BotCollection successfully');
       }
         setBot(armyData);
-        alert("Bot enlisted successfully!");
+        console.log("Bot enlisted successfully!");
         navigate("/")
         getBots()
       } else {
-        alert(`A bot from the class ${bot.bot_class} is already enlisted.`);
+        console.log(`A bot from the class ${bot.bot_class} is already enlisted.`);
       }
     } catch (error) {
       console.error('Error enlisting bot:', error);
@@ -99,7 +99,7 @@ function BotDetails({getBots}) {
         throw new Error("Failed to delete bot from backend");
       }
 
-      alert("Bot discharged successfully!");
+      console.log("Bot discharged successfully!");
        navigate("/")
        getBots()
     } catch (error) {
