@@ -37,7 +37,7 @@ function YourBotArmy() {
         throw new Error("Failed to delete bot from backend");
       }
       setBotArmy((prevBotArmy) => prevBotArmy.filter((bot) => bot.id !== botId));
-      console.log('Bot removed from Your Bot Army successfully')
+      alert('Bot removed from Your Bot Army successfully')
     } catch (error) {
       console.error('Error releasing bot:', error);
     }
