@@ -77,7 +77,7 @@ function BotDetails({getBots}) {
           console.log('Bot removed from BotCollection successfully');
       }
         setBot(armyData);
-        console.log("Bot enlisted successfully!");
+        alert("Bot enlisted successfully!");
         navigate("/")
         getBots()
       } else {
@@ -99,7 +99,7 @@ function BotDetails({getBots}) {
         throw new Error("Failed to delete bot from backend");
       }
 
-      console.log("Bot discharged successfully!");
+     alert("Bot discharged successfully!");
        navigate("/")
        getBots()
     } catch (error) {
